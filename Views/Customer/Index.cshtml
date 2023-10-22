@@ -1,0 +1,8 @@
+@using E_Commerce.Models
+@model Customer_ListCustomerView
+@await Html.PartialAsync("_Nav")
+
+
+@await Html.PartialAsync("_CustomerForm", @Model.Customer)
+
+@await Html.PartialAsync("_ListCustomer", @Model.Customers)

@@ -1,0 +1,11 @@
+@using E_Commerce.Models
+@model Customer
+<div class="customerform">
+    <h1>Add a new customer</h1>
+    <form asp-action="Create" asp-controller="Customer">
+        <label asp-for="Name"></label>
+        <input asp-for="Name">
+        <span asp-validation-for="Name"></span>
+        <button type="submit" class="btn1 whitebtn">Add</button>
+    </form>
+</div>

@@ -1,0 +1,24 @@
+@using E_Commerce.Models
+@model List<Order>
+<table>
+
+    <thead>
+        <tr>
+            <th>Customer Name</th>
+            <th>Product</th>
+            <th>Quantity</th>
+            <th>Date</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Order result in Model)
+        {
+            <tr>
+                <td>@result.Customer.Name</td>
+                <td>@result.Product.Name</td>
+                <td>@result.Quantity</td>
+                <td>@result.CreatedAt</td>
+            </tr>
+        }
+    </tbody>
+</table>

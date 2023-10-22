@@ -1,0 +1,27 @@
+@using E_Commerce.Models
+@model Order_ListCustomer_ListProductView
+<div class="orderform">
+    <h1>Add a new order</h1>
+    <form asp-action="Create" asp-controller="Order">
+        <label asp-for="CustomerId">Customer</label>
+        <select asp-for="CustomerId">
+            @foreach (Customer customer in @Model.Customers)
+            {
+                <option value="@customer.Id">@customer.Name</option>
+            }
+        </select>
+        <span asp-validation-for="CustomerId"></span>
+        <label asp-for="ProductId">Product</label>
+        <select asp-for="ProductId">
+            @foreach (Product product in @Model.Products)
+            {
+                <option value="@product.Id">@product.Name</option>
+            }
+        </select>
+        <span asp-validation-for="ProductId"></span>
+        <label asp-for="ProductQuantity"></label>
+        <input asp-for="ProductQuantity">
+        <span asp-validation-for="ProductQuantity"></span>
+        <button type="submit" class="btn1 whitebtn">Create</button>
+    </form>
+</div>

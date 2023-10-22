@@ -1,0 +1,7 @@
+@using E_Commerce.Models
+@model OrderIndexView
+@await Html.PartialAsync("_Nav")
+
+@await Html.PartialAsync("_OrderForm", @Model.Order_ListCustomer_ListProductView)
+
+@await Html.PartialAsync("_ListOrder", @Model.Orders)

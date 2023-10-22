@@ -1,0 +1,25 @@
+@using E_Commerce.Models
+@model List<Customer>
+<table>
+    <thead>
+        <tr>
+            <th>Customer Name</th>
+            <th>Joined On</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Customer result in Model)
+        {
+            <tr>
+                <td>@result.Name</td>
+                <td>@result.CreatedAt</td>
+                <td>
+                    <form asp-action="Delete" asp-controller="Customer" asp-route-id="@result.Id">
+                        <button type="submit" class="btn1 redbtn">Remove</button>
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

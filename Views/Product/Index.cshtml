@@ -1,0 +1,9 @@
+@using E_Commerce.Models
+@model Product_ListProductView
+@await Html.PartialAsync("_Nav")
+
+<div class="productIndex">
+@await Html.PartialAsync("_ProductForm", @Model.Product)
+
+@await Html.PartialAsync("_ListProduct", @Model.Products)
+</div>

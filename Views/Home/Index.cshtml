@@ -1,0 +1,37 @@
+@using E_Commerce.Models
+@model HomeIndexView
+@await Html.PartialAsync("_Nav")
+
+<div class="productsblocks">
+    @foreach (Product resultproduct in @Model.Products)
+    {
+        <div class="blocksProduct">
+            <img src="@resultproduct.Url">
+            <p>@resultproduct.Name</p>
+            <p>@resultproduct.Quantity left</p>
+        </div>
+    }
+    <div>
+        <a asp-action="Index" asp-controller="Product">show more products....</a>
+    </div>
+</div>
+<div class="orderrecent">
+    <p>Recent Orders</p>
+    @foreach (Order resultorder in @Model.Orders)
+    {
+        <p>@resultorder.Customer.Name purchased @resultorder.Quantity @resultorder.Product.Name @resultorder.CreatedAt</p>
+    }
+    <div>
+        <a asp-action="Index" asp-controller="Order">Show more Orders...</a>
+    </div>
+</div>
+<div class="customerrecent">
+    <p>New Customers</p>
+    @foreach (Customer resultcustomer in @Model.Customers)
+    {
+        <p>@resultcustomer.Name @resultcustomer.CreatedAt </p>
+    }
+    <div>
+        <a asp-action="Index" asp-controller="Customer">Show All Customers...</a>
+    </div>
+</div>

@@ -1,0 +1,12 @@
+@using E_Commerce.Models
+@model List<Product>
+<div class="productlistgrid">
+    @foreach (Product result in Model)
+    {
+        <div>
+            <img src="@result.Url">
+            <p>@result.Name</p>
+            <p>@result.Quantity left</p>
+        </div>
+    }
+</div>

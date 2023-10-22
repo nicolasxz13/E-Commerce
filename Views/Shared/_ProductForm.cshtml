@@ -1,0 +1,20 @@
+@using E_Commerce.Models
+@model Product
+<div class="productform">
+    <h1>Add a new customer</h1>
+    <form asp-action="Create" asp-controller="Product">
+        <label asp-for="Name"></label>
+        <input asp-for="Name">
+        <span asp-validation-for="Name"></span>
+
+        <label asp-for="Url">Image (Url)</label>
+        <input asp-for="Url">
+        <span asp-validation-for="Url"></span>
+
+        <label asp-for="Quantity"></label>
+        <input asp-for="Quantity">
+        <span asp-validation-for="Quantity"></span>
+
+        <button type="submit" class="btn1 whitebtn">Create</button>
+    </form>
+</div>
